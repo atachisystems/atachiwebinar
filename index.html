@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atachi Systems | MES Webinar Registration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            atachiPrimary: '#4A5568',
+            atachiSecondary: '#E63946',
+            atachiDark: '#1A202C',
+            atachiLight: '#F8F9FA',
+            atachiAccent: '#E63946',
+            atachiSuccess: '#10B981'
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8F9FA;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234a5568' fill-opacity='0.03'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .info-card {
+      background: linear-gradient(135deg, #1A202C 0%, #4A5568 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      z-index: 0;
+    }
+    .form-container {
+      background: white;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.12);
+    }
+    .input-floating {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .input-floating input, .input-floating select {
+      padding-top: 1.5rem;
+      background: transparent;
+      border-radius: 0.375rem;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+    .input-floating input:focus,
+    .input-floating select:focus {
+      border-color: #4299E1;
+      box-shadow: 0 0 0 3px rgba(66,153,225,0.2);
+      outline: none;
+    }
+    .input-floating label {
+      position: absolute;
+      left: 1rem;
+      top: 0.75rem;
+      background: transparent;
+      padding: 0 0.25rem;
+      font-size: 0.875rem;
+      color: #64748b;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .input-floating input:focus + label,
+    .input-floating input:not(:placeholder-shown) + label,
+    .input-floating select:focus + label, 
+    .input-floating select:not([value=""]) + label {
+      top: -0.5rem;
+      left: 0.75rem;
+      font-size: 0.75rem;
+      color: #4299E1;
+      background: white;
+      padding: 0 0.5rem;
+    }
+    .success-message {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      max-height: 0;
+      overflow: hidden;
+    }
+    .success-message.show {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 1000px;
+    }
+    .error-message {
+      display: none;
+      background: #FEE2E2;
+      color: #DC2626;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .error-message.show {
+      display: block;
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 1;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #4A5568 0%, #1A202C 100%);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #1A202C 0%, #4A5568 100%);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
+    }
+    .btn-primary:hover::after {
+      left: 100%;
+    }
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #E63946;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #E63946;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .mobile-menu {
+      display: none;
+      transition: all 0.3s ease-out;
+      transform-origin: top center;
+      transform: scaleY(0);
+      opacity: 0;
+    }
+    .mobile-menu.active {
+      display: flex;
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    .hamburger {
+      display: none;
+    }
+    .countdown-container {
+      background: rgba(26, 32, 44, 0.5);
+      backdrop-filter: blur(5px);
+    }
+    .timer-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+    }
+    .rotating-gear {
+      animation: spin 20s linear infinite;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .webinar-topics {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    .webinar-topics:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+    }
+    .form-progress {
+      height: 4px;
+      transition: width 0.3s ease;
+    }
+    .testimonial-quote {
+      position: relative;
+    }
+    .testimonial-quote::before {
+      content: '"';
+      position: absolute;
+      top: -30px;
+      left: -10px;
+      font-size: 100px;
+      color: rgba(255, 255, 255, 0.1);
+      font-family: serif;
+    }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    .tooltip .tooltip-text {
+      visibility: hidden;
+      width: 200px;
+      background-color: #1A202C;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      z-index: 10;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 14px;
+    }
+    .tooltip .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1A202C transparent transparent transparent;
+    }
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+    @media (max-width: 767px) {
+      .hamburger {
+        display: block;
+      }
+      .desktop-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <header class="flex justify-between items-center py-6 mb-8 relative">
+      <div class="flex items-center">
+        <img src="https://atachisystems.com/wp-content/uploads/2022/02/cropped-attachi_logo.png" alt="Atachi Systems" class="h-10">
+      </div>
+      <nav class="desktop-nav hidden md:flex items-center space-x-8">
+        <a href="https://atachisystems.com/" class="nav-link text-atachiPrimary font-medium">Home</a>
+        <a href="https://atachisystems.com/testimonials/" class="nav-link text-atachiPrimary font-medium">Customer Stories</a>
+        <a href="https://atachisystems.com/contact-us/" class="nav-link text-atachiPrimary font-medium">Contact</a>
+      </nav>
+      <button class="hamburger md:hidden text-atachiPrimary focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      <div class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-md rounded-lg p-4 mt-2 z-10 flex-col space-y-4">
+        <a href="https://atachisystems.com/" class="nav-link text-atachiPrimary font-medium">Home</a>
+        <a href="https://atachisystems.com/testimonials/" class="nav-link text-atachiPrimary font-medium">Customer Stories</a>
+        <a href="https://atachisystems.com/contact-us/" class="nav-link text-atachiPrimary font-medium">Contact</a>
+      </div>
+    </header>
+
+    <div class="mb-8 text-center">
+      <span class="inline-block px-4 py-1 rounded-full bg-atachiAccent bg-opacity-10 text-atachiAccent text-sm font-medium mb-3">
+        <i class="fas fa-star mr-1"></i> Exclusive Manufacturing Insights
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-atachiDark">Next-Generation <span class="text-atachiAccent">MES Solutions</span> for Industry Leaders</h1>
+      <p class="text-lg text-atachiPrimary max-w-3xl mx-auto">Join our exclusive webinar to discover how Atachi's Manufacturing Execution Systems are transforming operations across regulated industries.</p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-8 pb-12">
+      <div class="info-card lg:w-1/2 rounded-2xl p-8 md:p-10 text-white">
+        <div class="relative z-1">
+          <div class="absolute -top-16 -right-16 opacity-10 rotating-gear">
+            <svg width="180" height="180" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M50 12C51.1046 12 52 11.1046 52 10V4C52 2.89543 51.1046 2 50 2C48.8954 2 48 2.89543 48 4V10C48 11.1046 48.8954 12 50 12ZM50 98C51.1046 98 52 97.1046 52 96V90C52 88.8954 51.1046 88 50 88C48.8954 88 48 88.8954 48 90V96C48 97.1046 48.8954 98 50 98ZM88 50C88 51.1046 88.8954 52 90 52H96C97.1046 52 98 51.1046 98 50C98 48.8954 97.1046 48 96 48H90C88.8954 48 88 48.8954 88 50ZM10 52C8.89543 52 8 51.1046 8 50C8 48.8954 8.89543 48 10 48H16C17.1046 48 18 48.8954 18 50C18 51.1046 17.1046 52 16 52H10ZM77.0711 24.5147C77.8521 23.7337 77.8521 22.4674 77.0711 21.6863C76.29 20.9052 75.0237 20.9052 74.2426 21.6863L70.1005 25.8284C69.3195 26.6095 69.3195 27.8758 70.1005 28.6569C70.8816 29.4379 72.1479 29.4379 72.929 28.6569L77.0711 24.5147ZM29.8995 71.3137C29.1184 70.5326 27.8521 70.5326 27.0711 71.3137C26.29 72.0948 26.29 73.3611 27.0711 74.1421L31.2132 78.2843C31.9943 79.0653 33.2606 79.0653 34.0416 78.2843C34.8227 77.5032 34.8227 76.2369 34.0416 75.4558L29.8995 71.3137ZM72.929 71.3137C72.1479 70.5326 70.8816 70.5326 70.1005 71.3137L65.9584 75.4558C65.1774 76.2369 65.1774 77.5032 65.9584 78.2843C66.7395 79.0653 68.0058 79.0653 68.7868 78.2843L72.929 74.1421C73.71 73.3611 73.71 72.0948 72.929 71.3137ZM34.0416 24.5147C34.8227 23.7337 34.8227 22.4674 34.0416 21.6863L29.8995 17.5442C29.1184 16.7631 27.8521 16.7631 27.0711 17.5442C26.29 18.3253 26.29 19.5916 27.0711 20.3726L31.2132 24.5147C31.9943 25.2958 33.2606 25.2958 34.0416 24.5147ZM40 50C40 44.4772 44.4772 40 50 40C55.5228 40 60 44.4772 60 50C60 55.5228 55.5228 60 50 60C44.4772 60 40 55.5228 40 50ZM50 36C42.268 36 36 42.268 36 50C36 57.732 42.268 64 50 64C57.732 64 64 57.732 64 50C64 42.268 57.732 36 50 36Z" fill="white"/>
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold mb-8">Transform Your Manufacturing Operations</h2>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="feature-icon rounded-full flex items-center justify-center mt-1">
+                <i class="fas fa-industry text-atachiAccent text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Industry-Specific MES Solutions</h3>
+                <p class="text-gray-300">Tailored for regulated industries including Pharmaceutical, Life Sciences, Medical Devices, and Discrete Manufacturing</p>
+              </div>
+            </div>
+            <div class="webinar-topics p-5 mb-4">
+              <div class="flex items-start gap-4">
+                <div class="feature-icon rounded-full flex items-center justify-center mt-1">
+                  <i class="fas fa-chart-line text-atachiAccent text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg mb-2">Expert-Led Sessions</h3>
+                  <ul class="text-gray-300 space-y-3">
+                    <li class="flex items-center gap-2">
+                      <i class="fas fa-check-circle text-atachiAccent"></i>
+                      <span>Real-time production monitoring & analytics</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fas fa-check-circle text-atachiAccent"></i>
+                      <span>Paperless manufacturing workflows</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fas fa-check-circle text-atachiAccent"></i>
+                      <span>Integrated quality management systems</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fas fa-check-circle text-atachiAccent"></i>
+                      <span>Regulatory compliance (FDA 21 CFR Part 11)</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fas fa-check-circle text-atachiAccent"></i>
+                      <span>Digital transformation roadmaps</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="feature-icon rounded-full flex items-center justify-center mt-1">
+                <i class="fas fa-calendar-alt text-atachiAccent text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Event Details</h3>
+                <p class="text-gray-300 mb-2"><i class="far fa-clock mr-2 text-atachiAccent"></i> Date will be announced based on registrations</p>
+                <p class="text-gray-300"><i class="fas fa-envelope mr-2 text-atachiAccent"></i> You'll receive date confirmation via email</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container lg:w-1/2 rounded-2xl p-8 md:p-10 relative">
+        <div class="absolute top-0 left-0 right-0 rounded-t-2xl overflow-hidden">
+          <div class="form-progress bg-atachiAccent w-0"></div>
+        </div>
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-semibold text-atachiDark mb-2">Register for Our MES Webinar</h2>
+          <p class="text-atachiPrimary">Limited seats available. Reserve your spot today.</p>
+        </div>
+        <form id="registrationForm" action= "https://docs.google.com/forms/u/0/d/e/1FAIpQLSevHXcLsFw2FbUugHp8RNW5DomwEvqBtJEi5RFQPQTUoN95Ew/formResponse" class="space-y-1">
+          <div class="input-floating">
+            <input type="text" id="fullName" name="entry.1763134510" placeholder=" " required class="w-full px-4 py-3 text-atachiDark"/>
+            <label for="fullName">Full Name</label>
+          </div>
+          <div class="input-floating">
+            <input type="text" id="companyName" name="entry.2085074941" placeholder=" " required class="w-full px-4 py-3 text-atachiDark"/>
+            <label for="companyName">Company</label>
+          </div>
+          <div class="input-floating">
+            <input type="email" id="email" name="entry.1407540052" placeholder=" " required class="w-full px-4 py-3 text-atachiDark"/>
+            <label for="email">Email Address</label>
+          </div>
+          <div class="input-floating">
+            <input type="tel" id="phone" name="entry.134152691" placeholder=" " class="w-full px-4 py-3 text-atachiDark"/>
+            <label for="phone">Phone (Optional)</label>
+          </div>
+          <div class="input-floating">
+            <select id="industry" name="entry.1940201797" required class="w-full px-4 py-3 text-atachiDark appearance-none">
+              <option value="" disabled selected></option>
+              <option value="Pharma">Pharmaceutical</option>
+              <option value="Life Sciences">Life Sciences</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Medical Devices">Medical Devices</option>
+              <option value="Others">Others</option>
+            </select>
+            <label for="industry">Industry</label>
+          </div>
+          <button type="submit" class="btn-primary w-full mt-8 py-4 text-white rounded-lg font-semibold">
+            <i class="fas fa-lock mr-2"></i> Secure My Spot
+          </button>
+          <p class="text-xs text-center mt-4 text-gray-500">Your information is secure and will not be shared with third parties</p>
+        </form>
+        <div id="successMessage" class="success-message bg-atachiSuccess bg-opacity-10 p-6 rounded-lg text-center mt-6">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-atachiSuccess bg-opacity-20 mb-4">
+            <i class="fas fa-check-circle text-atachiSuccess text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-atachiSuccess mb-2">Registration Successful!</h3>
+          <p class="text-atachiPrimary">Thank you for registering. We'll send you an email with webinar details shortly.</p>
+        </div>
+        <div id="errorMessage" class="error-message">
+          Registration failed. Please try again.
+        </div>
+      </div>
+    </div>
+
+    <div class="py-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-atachiDark mb-4">Why Leading Manufacturers Trust Atachi</h2>
+        <p class="text-lg text-atachiPrimary max-w-2xl mx-auto">Join hundreds of industry leaders who have transformed their operations with our MES solutions.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-atachiAccent mb-4">
+            <i class="fas fa-chart-pie text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-atachiDark">30% Efficiency Boost</h3>
+          <p class="text-atachiPrimary">Our clients see an average 30% improvement in operational efficiency within 6 months of implementation.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-atachiAccent mb-4">
+            <i class="fas fa-file-alt text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-atachiDark">99.7% Compliance Rate</h3>
+          <p class="text-atachiPrimary">Ensure regulatory compliance with automated documentation and validation processes.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-atachiAccent mb-4">
+            <i class="fas fa-tachometer-alt text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-atachiDark">ROI Within 12 Months</h3>
+          <p class="text-atachiPrimary">Most clients achieve full return on investment within the first year of deployment.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-atachiLight py-12 rounded-xl mb-16">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-atachiDark mb-4">Frequently Asked Questions</h2>
+      
+        <p class="text-atachiPrimary max-w-2xl mx-auto">Get answers to common questions about our MES solutions and the webinar</p>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-lg text-atachiDark mb-2">What industries do your MES solutions support?</h3>
+          <p class="text-atachiPrimary">Our solutions are designed specifically for regulated industries including Pharmaceutical, Life Sciences, Medical Devices, and Discrete Manufacturing where compliance is critical.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-lg text-atachiDark mb-2">How long does implementation typically take?</h3>
+          <p class="text-atachiPrimary">Implementation timelines vary based on scope, but our modular approach allows for phased implementation, with initial modules going live in as little as 3-4 months.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-lg text-atachiDark mb-2">Is the system compliant with FDA 21 CFR Part 11?</h3>
+          <p class="text-atachiPrimary">Yes, our MES platform is fully compliant with FDA 21 CFR Part 11 requirements, including electronic signatures, audit trails, and data integrity controls.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="font-semibold text-lg text-atachiDark mb-2">Will there be a Q&A session during the webinar?</h3>
+          <p class="text-atachiPrimary">Yes, we'll have a dedicated Q&A session where our industry experts will address your specific questions about MES implementation and optimization.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-t border-gray-200 pt-10 pb-16">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <img src="https://atachisystems.com/wp-content/uploads/2022/02/cropped-attachi_logo.png" alt="Atachi Systems" class="h-8">
+          <p class="text-sm text-atachiPrimary mt-2">Transform your manufacturing operations with next-gen MES</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="https://linkedin.com/company/atachi-systems" class="text-atachiPrimary hover:text-atachiAccent" aria-label="LinkedIn">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="https://twitter.com/atachisystems" class="text-atachiPrimary hover:text-atachiAccent" aria-label="Twitter">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="https://www.facebook.com/atachisystems" class="text-atachiPrimary hover:text-atachiAccent" aria-label="Facebook">
+            <i class="fab fa-facebook text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+        <div class="flex space-x-6 mb-4 md:mb-0">
+          <a href="https://atachisystems.com/privacy-policy/" class="text-sm text-atachiPrimary hover:text-atachiAccent">Privacy Policy</a>
+          <a href="https://atachisystems.com/terms-of-service/" class="text-sm text-atachiPrimary hover:text-atachiAccent">Terms of Service</a>
+          <a href="https://atachisystems.com/contact-us/" class="text-sm text-atachiPrimary hover:text-atachiAccent">Contact Us</a>
+        </div>
+        <p class="text-sm text-atachiPrimary">© 2025 Atachi Systems. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+   // Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+}
+
+// Form validation and submission
+const form = document.getElementById('registrationForm');
+const successMessage = document.getElementById('successMessage');
+const errorMessage = document.getElementById('errorMessage');
+const progressBar = document.querySelector('.form-progress');
+
+// Update progress bar as form is filled
+function updateProgress() {
+  if (!form || !progressBar) return;
+  const formInputs = form.querySelectorAll('input, select');
+  const totalFields = formInputs.length;
+  let filledFields = 0;
+  formInputs.forEach(input => {
+    if (input.value) filledFields++;
+  });
+  const percentage = (filledFields / totalFields) * 100;
+  progressBar.style.width = `${percentage}%`;
+}
+
+// Initialize progress bar and attach change listeners
+if (form) {
+  const formInputs = form.querySelectorAll('input, select');
+  formInputs.forEach(input => {
+    input.addEventListener('change', updateProgress);
+  });
+  updateProgress(); // Initial call
+}
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (errorMessage) errorMessage.classList.remove('show');
+
+    // Client-side validation
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    console.log('Form data:', data);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!data['entry.1763134510'] || !data['entry.134152691'] || !data['entry.134152691'] || !data['entry.1940201797']) {
+      if (errorMessage) {
+        errorMessage.textContent = 'Please fill all required fields.';
+        errorMessage.classList.add('show');
+      }
+      console.error('Validation failed: Missing required fields');
+      return;
+    }
+    if (!emailRegex.test(data['entry.1407540052'])) {
+      if (errorMessage) {
+        errorMessage.textContent = 'Please enter a valid email address.';
+        errorMessage.classList.add('show');
+      }
+      return;
+    }
+    for (const [key, value] of formData.entries()) {
+      console.log(`FormData entry: ${key}=${value}`);
+    }
+
+    form.style.opacity = '0.5';
+    form.style.pointerEvents = 'none';
+
+    try {
+      await fetch('https://docs.google.com/forms/d/e/1FAIpQLSevHXcLsFw2FbUugHp8RNW5DomwEvqBtJEi5RFQPQTUoN95Ew/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Required for Google Forms
+      });
+      // Since 'no-cors' prevents response inspection, assume success if no error
+      if (successMessage) successMessage.classList.add('show');
+      form.reset();
+      if (progressBar) progressBar.style.width = '0%';
+    } catch (error) {
+      if (errorMessage) {
+        errorMessage.textContent = 'Registration failed. Please try again.';
+        errorMessage.classList.add('show');
+      }
+    } finally {
+      setTimeout(() => {
+        form.style.opacity = '1';
+        form.style.pointerEvents = 'auto';
+      }, 1000);
+    }
+  });
+}
+  </script>
+</body>
+</html>
