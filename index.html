@@ -373,13 +373,13 @@
           <h2 class="text-2xl font-semibold text-atachiDark mb-2">Register for Our MES Webinar</h2>
           <p class="text-atachiPrimary">Limited seats available. Reserve your spot today.</p>
         </div>
-        <form id="registrationForm" action= "https://docs.google.com/forms/u/0/d/e/1FAIpQLSevHXcLsFw2FbUugHp8RNW5DomwEvqBtJEi5RFQPQTUoN95Ew/formResponse" class="space-y-1">
+        <form id="registrationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSevHXcLsFw2FbUugHp8RNW5DomwEvqBtJEi5RFQPQTUoN95Ew/formResponse" method="POST" class="space-y-1">
           <div class="input-floating">
-            <input type="text" id="fullName" name="entry.1763134510" placeholder=" " required class="w-full px-4 py-3 text-atachiDark"/>
+            <input type="text" id="fullName" name="entry.2085074941" placeholder=" " required class="w-full px-4 py-3 text-atachiDark"/>
             <label for="fullName">Full Name</label>
           </div>
           <div class="input-floating">
-            <input type="text" id="companyName" name="entry.2085074941" placeholder=" " required class="w-full px-4 py-3 text-atachiDark"/>
+            <input type="text" id="companyName" name="entry.1763134510" placeholder=" " required class="w-full px-4 py-3 text-atachiDark"/>
             <label for="companyName">Company</label>
           </div>
           <div class="input-floating">
@@ -392,8 +392,8 @@
           </div>
           <div class="input-floating">
             <select id="industry" name="entry.1940201797" required class="w-full px-4 py-3 text-atachiDark appearance-none">
-              <option value="" disabled selected></option>
-              <option value="Pharma">Pharmaceutical</option>
+              <option value="" disabled selected>Select</option>
+              <option value="Pharmaceutical">Pharmaceutical</option>
               <option value="Life Sciences">Life Sciences</option>
               <option value="Manufacturing">Manufacturing</option>
               <option value="Medical Devices">Medical Devices</option>
@@ -414,7 +414,7 @@
           <p class="text-atachiPrimary">Thank you for registering. We'll send you an email with webinar details shortly.</p>
         </div>
         <div id="errorMessage" class="error-message">
-          Registration failed. Please try again.
+          Registration failed. Please check your input and try again.
         </div>
       </div>
     </div>
@@ -452,7 +452,6 @@
     <div class="bg-atachiLight py-12 rounded-xl mb-16">
       <div class="text-center mb-8">
         <h2 class="text-3xl font-bold text-atachiDark mb-4">Frequently Asked Questions</h2>
-      
         <p class="text-atachiPrimary max-w-2xl mx-auto">Get answers to common questions about our MES solutions and the webinar</p>
       </div>
       <div class="max-w-3xl mx-auto space-y-4">
@@ -505,98 +504,112 @@
   </div>
 
   <script>
-   // Mobile menu toggle
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-  });
-}
-
-// Form validation and submission
-const form = document.getElementById('registrationForm');
-const successMessage = document.getElementById('successMessage');
-const errorMessage = document.getElementById('errorMessage');
-const progressBar = document.querySelector('.form-progress');
-
-// Update progress bar as form is filled
-function updateProgress() {
-  if (!form || !progressBar) return;
-  const formInputs = form.querySelectorAll('input, select');
-  const totalFields = formInputs.length;
-  let filledFields = 0;
-  formInputs.forEach(input => {
-    if (input.value) filledFields++;
-  });
-  const percentage = (filledFields / totalFields) * 100;
-  progressBar.style.width = `${percentage}%`;
-}
-
-// Initialize progress bar and attach change listeners
-if (form) {
-  const formInputs = form.querySelectorAll('input, select');
-  formInputs.forEach(input => {
-    input.addEventListener('change', updateProgress);
-  });
-  updateProgress(); // Initial call
-}
-
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (errorMessage) errorMessage.classList.remove('show');
-
-    // Client-side validation
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    console.log('Form data:', data);
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!data['entry.1763134510'] || !data['entry.134152691'] || !data['entry.134152691'] || !data['entry.1940201797']) {
-      if (errorMessage) {
-        errorMessage.textContent = 'Please fill all required fields.';
-        errorMessage.classList.add('show');
-      }
-      console.error('Validation failed: Missing required fields');
-      return;
-    }
-    if (!emailRegex.test(data['entry.1407540052'])) {
-      if (errorMessage) {
-        errorMessage.textContent = 'Please enter a valid email address.';
-        errorMessage.classList.add('show');
-      }
-      return;
-    }
-    for (const [key, value] of formData.entries()) {
-      console.log(`FormData entry: ${key}=${value}`);
-    }
-
-    form.style.opacity = '0.5';
-    form.style.pointerEvents = 'none';
-
-    try {
-      await fetch('https://docs.google.com/forms/d/e/1FAIpQLSevHXcLsFw2FbUugHp8RNW5DomwEvqBtJEi5RFQPQTUoN95Ew/formResponse', {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors' // Required for Google Forms
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
       });
-      // Since 'no-cors' prevents response inspection, assume success if no error
-      if (successMessage) successMessage.classList.add('show');
-      form.reset();
-      if (progressBar) progressBar.style.width = '0%';
-    } catch (error) {
-      if (errorMessage) {
-        errorMessage.textContent = 'Registration failed. Please try again.';
-        errorMessage.classList.add('show');
-      }
-    } finally {
-      setTimeout(() => {
-        form.style.opacity = '1';
-        form.style.pointerEvents = 'auto';
-      }, 1000);
     }
-  });
-}
+
+    // Form validation and submission
+    const form = document.getElementById('registrationForm');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const progressBar = document.querySelector('.form-progress');
+
+    // Update progress bar as form is filled
+    function updateProgress() {
+      if (!form || !progressBar) return;
+      const formInputs = form.querySelectorAll('input, select');
+      const totalFields = formInputs.length;
+      let filledFields = 0;
+      formInputs.forEach(input => {
+        if (input.value) filledFields++;
+      });
+      const percentage = (filledFields / totalFields) * 100;
+      progressBar.style.width = `${percentage}%`;
+    }
+
+    // Initialize progress bar and attach change listeners
+    if (form) {
+      const formInputs = form.querySelectorAll('input, select');
+      formInputs.forEach(input => {
+        input.removeEventListener('change', updateProgress); // Prevent duplicate listeners
+        input.addEventListener('change', updateProgress);
+      });
+      updateProgress();
+    }
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log('Form submission triggered');
+        if (errorMessage) errorMessage.classList.remove('show');
+
+        // Client-side validation
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        console.log('Form data:', data);
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validate required fields
+        if (!data['entry.2085074941'] || !data['entry.1763134510'] || !data['entry.1407540052'] || !data['entry.1940201797']) {
+          if (errorMessage) {
+            errorMessage.textContent = 'Please fill all required fields.';
+            errorMessage.classList.add('show');
+          }
+          console.error('Validation failed: Missing required fields');
+          return;
+        }
+
+        // Validate email
+        if (!emailRegex.test(data['entry.1407540052'])) {
+          if (errorMessage) {
+            errorMessage.textContent = 'Please enter a valid email address.';
+            errorMessage.classList.add('show');
+          }
+          console.error('Validation failed: Invalid email');
+          return;
+        }
+
+        // Log FormData entries
+        for (const [key, value] of formData.entries()) {
+          console.log(`FormData entry: ${key}=${value}`);
+        }
+
+        form.style.opacity = '0.5';
+        form.style.pointerEvents = 'none';
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+
+        try {
+          console.log('Sending fetch request to Google Forms');
+          await fetch('https://docs.google.com/forms/d/e/1FAIpQLSevHXcLsFw2FbUugHp8RNW5DomwEvqBtJEi5RFQPQTUoN95Ew/formResponse', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+          });
+          console.log('Fetch request completed');
+          if (successMessage) successMessage.classList.add('show');
+          form.reset();
+          if (progressBar) progressBar.style.width = '0%';
+        } catch (error) {
+          if (errorMessage) {
+            errorMessage.textContent = 'Registration failed (400 Bad Request). Please check your input and try again.';
+            errorMessage.classList.add('show');
+          }
+          console.error('Fetch error:', error);
+        } finally {
+          setTimeout(() => {
+            form.style.opacity = '1';
+            form.style.pointerEvents = 'auto';
+            submitButton.disabled = false;
+          }, 2000);
+        }
+      });
+    }
   </script>
 </body>
 </html>
