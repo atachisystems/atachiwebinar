@@ -68,7 +68,7 @@
     }
     .input-floating {
       position: relative;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.25rem !important;
     }
     .input-floating input, .input-floating select {
       width: 100%;
@@ -463,25 +463,31 @@
         </div>
         <div class="text-center mb-8">
           <h2 class="text-2xl font-semibold text-atachiDark mb-2">Register for Our MES Webinar</h2>
-          <p class="text-atachiPrimary">Limited seats available. Reserve your spot today.</p>
+          <p class="text-atachiPrimary">Reserve your spot today.</p>
         </div>
         <form id="registrationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSevHXcLsFw2FbUugHp8RNW5DomwEvqBtJEi5RFQPQTUoN95Ew/formResponse" method="POST" class="space-y-1">
           <div class="input-floating">
             <input type="text" id="fullName" name="entry.2085074941" placeholder=" " required class="w-full"/>
             <label for="fullName">Full Name</label>
           </div>
+          <!-- <div class="input-floating">
+            <select id="country" name="entry.796197398" required class="w-full">
+              <option value="" disabled selected>Select</option>
+              <option value="India">India</option>
+              <option value="US">US</option>
+              <option value="Germany">Germany</option>
+              <option value="Others">Others</option>
+            </select>
+            <label for="country">Country</label>
+          </div> -->
           <div class="input-floating">
             <input type="text" id="companyName" name="entry.1763134510" placeholder=" " required class="w-full"/>
             <label for="companyName">Company</label>
           </div>
-          <div class="input-floating">
-            <input type="email" id="email" name="entry.1407540052" placeholder=" " required class="w-full"/>
-            <label for="email">Email Address</label>
-          </div>
-          <div class="input-floating">
-            <input type="tel" id="phone" name="entry.134152691" placeholder=" " class="w-full"/>
-            <label for="phone">Phone (Optional)</label>
-          </div>
+          <!-- <div class="input-floating">
+            <input type="text" id="role" name="entry.1773820311" placeholder=" " required class="w-full"/>
+            <label for="role">Role</label>
+          </div> -->
           <div class="input-floating">
             <select id="industry" name="entry.1940201797" required class="w-full">
               <option value="" disabled selected>Select</option>
@@ -492,6 +498,32 @@
               <option value="Others">Others</option>
             </select>
             <label for="industry">Industry</label>
+          </div>
+          <!-- <div class="input-floating">
+            <input type="text" id="experience" name="entry.1648256089" placeholder=" " required class="w-full"/>
+            <label for="experience">Years of Experience</label>
+          </div> -->
+          <div class="input-floating">
+            <input type="email" id="email" name="entry.1407540052" placeholder=" " required class="w-full"/>
+            <label for="email">Email Address</label>
+          </div>
+          <!-- <div class="input-floating">
+            <input type="tel" id="phone" name="entry.2016446953" placeholder=" " class="w-full"/>
+            <label for="phone">Phone (Optional)</label>
+          </div> -->
+          <div class="input-floating">
+            <select id="industry" name="entry.1939059769" required class="w-full">
+              <option value="" disabled selected>Select</option>
+              <option value="May 21  10:00 AM - 12:00 PM IST">May 21  10:00 AM - 12:00 PM IST</option>
+              <option value="May 21  08:00 PM - 10:00 PM IST">May 21  08:00 PM - 10:00 PM IST </option>
+              <option value="May 23  10:00 AM - 12:00 PM IST">May 23  10:00 AM - 12:00 PM IST</option>
+              <option value="May 23 08:00 PM - 10:00 PM IST"> May 23 08:00 PM - 10:00 PM IST</option>
+              <option value="May 26 10:00 AM - 12:00 PM IST"> May 26 10:00 AM - 12:00 PM IST</option>
+              <option value="May 26  08:00 PM - 10:00 PM IST"> May 26 08:00 PM - 10:00 PM IST</option>
+
+              
+            </select>
+            <label for="industry">Preferred Time Slot</label>
           </div>
           <button type="submit" class="btn-primary w-full mt-6">
             <i class="fas fa-lock mr-2"></i> Secure My Spot
@@ -664,15 +696,15 @@
         console.log('Form data:', data);
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Validate required fields
-        if (!data['entry.2085074941'] || !data['entry.1763134510'] || !data['entry.1407540052'] || !data['entry.1940201797']) {
-          if (errorMessage) {
-            errorMessage.textContent = 'Please fill all required fields.';
-            errorMessage.classList.add('show');
-          }
-          console.error('Validation failed: Missing required fields');
-          return;
-        }
+        // // Validate required fields
+        // if (!data['entry.2085074941'] || !data['entry.1763134510'] || !data['entry.1407540052'] || !data['entry.1940201797']) {
+        //   if (errorMessage) {
+        //     errorMessage.textContent = 'Please fill all required fields.';
+        //     errorMessage.classList.add('show');
+        //   }
+        //   console.error('Validation failed: Missing required fields');
+        //   return;
+        // }
 
         // Validate email
         if (!emailRegex.test(data['entry.1407540052'])) {
@@ -685,9 +717,9 @@
         }
 
         // Log FormData entries
-        for (const [key, value] of formData.entries()) {
-          console.log(`FormData entry: ${key}=${value}`);
-        }
+        // for (const [key, value] of formData.entries()) {
+        //   console.log(`FormData entry: ${key}=${value}`);
+        // }
 
         form.style.opacity = '0.5';
         form.style.pointerEvents = 'none';
